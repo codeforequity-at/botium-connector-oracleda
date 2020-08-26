@@ -1,0 +1,41 @@
+test
+
+#me
+Can I order a Pizza?
+
+#bot
+What kind of pizza would you like to order?
+
+#bot
+CARDS CHEESE BASIC|Classic marinara sauce topped with whole milk mozzarella cheese.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/09/03/10/35/pizza-2709845__340.jpg
+CARDS PEPPERONI|Classic marinara sauce with authentic old-world style pepperoni.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/08/02/12/38/pepperoni-2571392__340.jpg
+CARDS MEAT LOVER|Classic marinara sauce, authentic old-world pepperoni, all-natural Italian sausage, slow-roasted ham, hardwood smoked bacon, seasoned pork and beef.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/07/22/22/51/big-2530144__340.jpg
+CARDS SUPREME|Classic marinara sauce, authentic old-world pepperoni, seasoned pork, beef, fresh mushrooms, fresh green bell peppers and fresh red onions.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/07/22/22/57/pizza-2530169__340.jpg
+CARDS PREMIUM GARDEN VEGGIE|Premium crushed tomato sauce topped with green peppers, red onions, mushrooms, Roma tomatoes and roasted spinach with our Hut Favorite on the crust.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/07/22/22/57/pizza-2530169__340.jpg
+CARDS ULTIMATE CHEESE LOVER|Garlic Parmesan sauce topped with 50% more mozzarella cheese with a toasted Parmesan crust.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/08/02/12/38/pepperoni-2571392__340.jpg
+CARDS HAWAIIAN CHICKEN|Grilled chicken, ham, pineapple and green bell peppers.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/07/22/22/51/big-2530144__340.jpg
+CARDS BACON SPINACH ALFREDO|Garlic Parmesan sauce topped with bacon, mushrooms and roasted spinach with a salted pretzel crust.
+BUTTONS Order Now
+MEDIA https://cdn.pixabay.com/photo/2017/09/03/10/35/pizza-2709845__340.jpg
+
+#me
+BUTTON {"variables":{"pizza": "CHEESE BASIC"}}|Order Now
+
+#bot
+What size do you want?
+BUTTONS Large|Medium|Small|Extra Large
+
