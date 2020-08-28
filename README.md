@@ -89,7 +89,7 @@ There is a small demo in [samples](./samples) with Botium Bindings. It uses real
     * Change Webhook secret
     * Start `inbound-proxy` command with [Botium CLI](https://github.com/codeforequity-at/botium-cli/) 
     (by default it will listen on `http://127.0.0.1:45100/`)
-    * In your Oracle Digital Assistant you need to set `Outgoing Webhook URI`. 
+    * In your Oracle Digital Assistant you need to set `Outgoing Webhook URI` according to the previous step set up inbound-proxy url. 
     (To make this localhost url public you can use e.g. [ngrok](https://ngrok.com/))
     * Change inbound redis url if it needs
 * Install packages, run the test
