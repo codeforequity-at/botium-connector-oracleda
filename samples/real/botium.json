@@ -1,0 +1,11 @@
+{
+  "botium": {
+    "Capabilities": {
+      "PROJECTNAME": "Botium Project Oracle DA",
+      "CONTAINERMODE": "oracleda",
+      "ORACLE_WEBHOOK_URL": "https://webhook-url",
+      "ORACLE_WEBHOOK_SECRET": "Secret Key",
+      "SIMPLEREST_INBOUND_REDISURL": "redis://127.0.0.1:6379"
+    }
+  }
+}

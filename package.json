@@ -1,6 +1,6 @@
 {
   "name": "botium-connector-oracle",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Botium Connector for Oracle Digital Assistant",
   "main": "dist/botium-connector-oracle-cjs.js",
   "module": "dist/botium-connector-oracle-es.js",

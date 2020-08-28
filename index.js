@@ -9,9 +9,7 @@ const { Capabilities: CoreCapabilities } = require('botium-core')
 
 const Capabilities = {
   ORACLE_WEBHOOK_URL: 'ORACLE_WEBHOOK_URL',
-  ORACLE_WEBHOOK_SECRET: 'ORACLE_WEBHOOK_SECRET',
-  ORACLE_INBOUND_ENDPOINT: 'ORACLE_INBOUND_ENDPOINT',
-  ORACLE_INBOUND_PORT: 'ORACLE_INBOUND_PORT'
+  ORACLE_WEBHOOK_SECRET: 'ORACLE_WEBHOOK_SECRET'
 }
 
 class BotiumConnectorOracle {
@@ -124,8 +122,8 @@ class BotiumConnectorOracle {
             debug(`The '${messagePayload.type}' message type is not supported yet.`)
           }
         },
-        [CoreCapabilities.SIMPLEREST_INBOUND_PORT]: this.caps[Capabilities.ORACLE_INBOUND_PORT] || 3000,
-        [CoreCapabilities.SIMPLEREST_INBOUND_ENDPOINT]: this.caps[Capabilities.ORACLE_INBOUND_ENDPOINT] || ''
+        [CoreCapabilities.SIMPLEREST_INBOUND_SELECTOR_JSONPATH]: '$.body.userId',
+        [CoreCapabilities.SIMPLEREST_INBOUND_SELECTOR_VALUE]: '{{botium.conversationId}}'
       }
       for (const capKey of Object.keys(this.caps).filter(c => c.startsWith('SIMPLEREST'))) {
         if (!this.delegateCaps[capKey]) this.delegateCaps[capKey] = this.caps[capKey]
@@ -208,18 +206,6 @@ module.exports = {
         description: 'Webhook secret from Oracle Digital Assistant webhook channel.',
         type: 'string',
         required: true
-      },
-      {
-        name: 'ORACLE_INBOUND_ENDPOINT',
-        label: 'Oracle inbound end-point',
-        description: 'The end-point where the inbound server will waif for bot answers.',
-        type: 'string'
-      },
-      {
-        name: 'ORACLE_INBOUND_PORT',
-        label: 'Oracle inbound port',
-        description: 'The port on the inbound server will listen.',
-        type: 'int'
       }
     ]
   }

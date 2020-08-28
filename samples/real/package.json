@@ -15,7 +15,7 @@
   "devDependencies": {
     "botium-bindings": "latest",
     "botium-cli": "latest",
-    "botium-connector-oracle": "../../",
+    "botium-connector-oracleda": "../../",
     "mocha": "latest"
   }
 }
