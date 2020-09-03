@@ -188,25 +188,5 @@ class BotiumConnectorOracle {
 
 module.exports = {
   PluginVersion: 1,
-  PluginClass: BotiumConnectorOracle,
-  PluginDesc: {
-    name: 'Botium Connector for Oracle Digital Assistant',
-    provider: 'Botium',
-    capabilities: [
-      {
-        name: 'ORACLE_WEBHOOK_URL',
-        label: 'Oracle webhook URL',
-        description: 'Webhook URL from Oracle Digital Assistant webhook channel.',
-        type: 'url',
-        required: true
-      },
-      {
-        name: 'ORACLE_WEBHOOK_SECRET',
-        label: 'Oracle webhook secret',
-        description: 'Webhook secret from Oracle Digital Assistant webhook channel.',
-        type: 'string',
-        required: true
-      }
-    ]
-  }
+  PluginClass: BotiumConnectorOracle
 }
