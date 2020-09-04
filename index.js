@@ -69,9 +69,21 @@ class BotiumConnectorOracle {
         },
         [CoreCapabilities.SIMPLEREST_RESPONSE_HOOK]: ({ botMsg }) => {
           debug(`Response Body: ${util.inspect(botMsg.sourceData, false, null, true)}`)
+          const mapButtonPayload = (p) => {
+            let payload
+            try {
+              payload = JSON.parse(p)
+            } catch (err) {
+              payload = p
+            }
+            if (_.isObject(payload)) {
+              delete payload['system.botId']
+            }
+            return payload
+          }
           const mapButton = (b) => ({
             text: _.isString(b) ? b : b.title || b.text || b.label,
-            payload: !_.isString(b) ? (b.postback || b.data) : null
+            payload: !_.isString(b) ? mapButtonPayload(b.postback || b.data) : null
           })
           const mapMedia = (m) => ({
             mediaUri: _.isString(m) ? m : m.url,
