@@ -1,5 +1,4 @@
-# botium-connector-oracleda
-Botium Connector for Oracle Digital Assistant
+# Botium Connector for Oracle Digital Assistant
 
 [![NPM](https://nodei.co/npm/botium-connector-oracleda.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/botium-connector-oracleda/)
 
