@@ -3,7 +3,7 @@ Botium Connector for Oracle Digital Assistant
 
 [![NPM](https://nodei.co/npm/botium-connector-oracleda.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/botium-connector-oracleda/)
 
-[![Codeship Status for codeforequity-at/botium-connector-oracleda](https://app.codeship.com/projects/2bb81a70-c59f-0137-b318-6afa87cdc716/status?branch=master)](https://app.codeship.com/projects/366879)
+[![Codeship Status for codeforequity-at/botium-connector-oracleda](https://app.codeship.com/projects/ac5ab3a0-d0f5-0138-cac3-16239a5027f5/status?branch=master)](https://app.codeship.com/projects/408148)(https://app.codeship.com/projects/366879)
 [![npm version](https://badge.fury.io/js/botium-connector-oracleda.svg)](https://badge.fury.io/js/botium-connector-oracleda)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
