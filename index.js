@@ -178,7 +178,7 @@ class BotiumConnectorOracle {
   }
 
   async Build () {
-    return this.delegateContainer.Build()
+    await this.delegateContainer.Build()
   }
 
   async Start () {
@@ -186,15 +186,15 @@ class BotiumConnectorOracle {
   }
 
   async UserSays (msg) {
-    return this.delegateContainer.UserSays(msg)
+    await this.delegateContainer.UserSays(msg)
   }
 
   async Stop () {
-    return this.delegateContainer.Stop()
+    await this.delegateContainer.Stop()
   }
 
   async Clean () {
-    return this.delegateContainer.Clean()
+    await this.delegateContainer.Clean()
   }
 }
 
