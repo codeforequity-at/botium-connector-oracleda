@@ -177,7 +177,7 @@ class BotiumConnectorOracle {
     return hmac.digest('hex')
   }
 
-  Build () {
+  async Build () {
     return this.delegateContainer.Build()
   }
 
@@ -185,15 +185,15 @@ class BotiumConnectorOracle {
     await this.delegateContainer.Start()
   }
 
-  UserSays (msg) {
+  async UserSays (msg) {
     return this.delegateContainer.UserSays(msg)
   }
 
-  Stop () {
+  async Stop () {
     return this.delegateContainer.Stop()
   }
 
-  Clean () {
+  async Clean () {
     return this.delegateContainer.Clean()
   }
 }
