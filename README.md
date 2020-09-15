@@ -83,20 +83,29 @@ There is a small demo in [samples](./samples) with Botium Bindings. It uses real
 
 * Setup your Oracle Digital Assistant in [oracle cloud](https://www.oracle.com/application-development/cloud-services/digital-assistant/)
 (In the example there are test cases for `CbPizzaBot`, which can be pulled from the Digital Assistant store.)
-* Adapt botium.json in the sample directory: 
-    * Change Webhook URL
-    * Change Webhook secret
-    * Start `inbound-proxy` command with [Botium CLI](https://github.com/codeforequity-at/botium-cli/) 
-    (by default it will listen on `http://127.0.0.1:45100/`)
+* Install the dependencies and botium-core as peerDependency:
+    ```
+    > npm install && npm install --no-save botium-core
+    ```
+* Navigate into the _sample/real_ directory
+    * Install the dependencies
+        ```
+        > cd ./samples/real
+        > npm install
+        ```
+    * Adapt botium.json in the sample directory: 
+        * Change Webhook URL
+        * Change Webhook secret
+    * Start `inbound-proxy` (it will listen on `http://127.0.0.1:45100/`):
+         ```
+         > npm run inbound
+         ```
     * In your Oracle Digital Assistant you need to set `Outgoing Webhook URI` according to the previous step set up inbound-proxy url. 
     (To make this localhost url public you can use e.g. [ngrok](https://ngrok.com/))
-    * Change inbound redis url if it needs
-* Install packages, run the test
-
-```
-> cd ./samples/real
-> npm install && npm test
-```
+    * Finally run the test
+        ```
+        >  npm test
+        ```
 
 ## Supported Capabilities
 

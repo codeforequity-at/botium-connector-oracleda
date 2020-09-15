@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "test-debug": "DEBUG=botium-connector* mocha spec",
-    "test": "mocha spec"
+    "test": "mocha spec",
+    "inbound": "botium-cli inbound-proxy --verbose"
   },
   "botium": {
     "convodirs": [
