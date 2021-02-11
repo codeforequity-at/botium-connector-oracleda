@@ -9,7 +9,9 @@ const { Capabilities: CoreCapabilities } = require('botium-core')
 
 const Capabilities = {
   ORACLE_WEBHOOK_URL: 'ORACLE_WEBHOOK_URL',
-  ORACLE_WEBHOOK_SECRET: 'ORACLE_WEBHOOK_SECRET'
+  ORACLE_WEBHOOK_SECRET: 'ORACLE_WEBHOOK_SECRET',
+  ORACLE_USER_ID: 'ORACLE_USER_ID',
+  ORACLE_PROFILE: 'ORACLE_PROFILE'
 }
 
 class BotiumConnectorOracle {
@@ -39,6 +41,13 @@ class BotiumConnectorOracle {
             }
           }`,
         [CoreCapabilities.SIMPLEREST_REQUEST_HOOK]: ({ requestOptions, msg, context }) => {
+          if (this.caps[Capabilities.ORACLE_USER_ID]) {
+            requestOptions.body.userId = this.caps[Capabilities.ORACLE_USER_ID]
+          }
+          if (this.caps[Capabilities.ORACLE_PROFILE]) {
+            requestOptions.body.profile = this.caps[Capabilities.ORACLE_PROFILE]
+          }
+
           const messagePayload = requestOptions.body.messagePayload
           if (msg.buttons && msg.buttons.length > 0 && (msg.buttons[0].text || msg.buttons[0].payload)) {
             const payload = msg.buttons[0].payload || msg.buttons[0].text
@@ -135,7 +144,7 @@ class BotiumConnectorOracle {
           }
         },
         [CoreCapabilities.SIMPLEREST_INBOUND_SELECTOR_JSONPATH]: '$.body.userId',
-        [CoreCapabilities.SIMPLEREST_INBOUND_SELECTOR_VALUE]: '{{botium.conversationId}}'
+        [CoreCapabilities.SIMPLEREST_INBOUND_SELECTOR_VALUE]: this.caps[Capabilities.ORACLE_USER_ID] || '{{botium.conversationId}}'
       }
       for (const capKey of Object.keys(this.caps).filter(c => c.startsWith('SIMPLEREST'))) {
         if (!this.delegateCaps[capKey]) this.delegateCaps[capKey] = this.caps[capKey]
