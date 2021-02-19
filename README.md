@@ -117,3 +117,9 @@ Oracle Digital Assistant channel webhook url
 ### ORACLE_WEBHOOK_SECRET
 Oracle Digital Assistant channel secret key
 
+### ORACLE_USER_ID
+Optionally you are able to set a unique identifier for the user.
+
+### ORACLE_PROFILE
+Optionally you are able to set properties that represent the user, like firstName and lastName.
+
