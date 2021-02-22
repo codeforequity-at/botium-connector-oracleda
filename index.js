@@ -92,7 +92,7 @@ class BotiumConnectorOracle {
           }
           const mapButton = (b) => ({
             text: _.isString(b) ? b : b.title || b.text || b.label,
-            payload: !_.isString(b) ? mapButtonPayload(b.postback || b.data) : null
+            payload: !_.isString(b) ? mapButtonPayload(b.postback || b.value || b.url || b.data) : null
           })
           const mapMedia = (m) => ({
             mediaUri: _.isString(m) ? m : m.url,
@@ -114,7 +114,7 @@ class BotiumConnectorOracle {
             botMsg.messageText = messagePayload.text
             if (messagePayload.actions && messagePayload.actions.length > 0) {
               for (const action of messagePayload.actions) {
-                if (action.type === 'postback') {
+                if (action.type === 'postback' || action.type === 'url') {
                   botMsg.buttons.push(mapButton(action))
                 } else {
                   debug(`The '${action.type}' action type is not supported yet.`)
@@ -127,7 +127,7 @@ class BotiumConnectorOracle {
               if (card.actions && card.actions.length > 0) {
                 botiumCard.buttons = []
                 for (const action of card.actions) {
-                  if (action.type === 'postback') {
+                  if (action.type === 'postback' || action.type === 'url') {
                     botiumCard.buttons.push(mapButton(action))
                   } else {
                     debug(`The '${action.type}' action type is not supported yet.`)
